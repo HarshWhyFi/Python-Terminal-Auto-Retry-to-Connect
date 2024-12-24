@@ -1,0 +1,10 @@
+import time
+
+# Start the bot with retry mechanism
+while True:
+    try:
+        bot.polling(non_stop=True, interval=0)
+    except Exception as e:
+        print(f"Connection lost or error occurred: {e}")
+        print("Retrying in 10 seconds...")
+        time.sleep(10)  # Wait 10 seconds before retrying
